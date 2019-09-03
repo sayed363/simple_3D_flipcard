@@ -1,0 +1,59 @@
+/* EXTERNAL FONTS */
+@font-face{
+	font-family: '', sans-serif;
+	src: url(fonts/.ttf);		/**/
+}
+
+
+
+
+/* COMMON CSS */
+*{padding:0;margin:0;border:0;outline:0;}
+html{scroll-behavior:smooth;}
+body{
+	font-family: sans-serif;
+	font-size:16px;
+	color:#777;
+	font-weight: 100;
+}
+ul{	padding:0;	margin:0;}
+ul li{list-style-type:none;}
+a{text-decoration:none;}
+a:focus,a:hover{text-decoration:none;}
+.fix{overflow:hidden;}
+img{max-width:100%;}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+p{padding:0;margin:0;}
+
+.flip3D{
+	height: 450px;
+	width:350px;
+	margin: 50px auto;
+	background: #777;
+	cursor: pointer;
+}
+.flip3D > .front{
+	height: 450px;
+	width:350px;
+	position: absolute;
+	transform: perspective(800px) rotateY(0deg);
+	background: #45AF4A;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+.flip3D > .back{
+	height: 450px;
+	width:350px;
+	position: absolute;
+	transform: perspective(800px) rotateY(180deg);
+	background: #CFDF24;
+	backface-visibility: hidden;
+	transition: transform .5s linear 0s;
+}
+.flip3D:hover > .front{
+	transform: perspective(800px) rotateY(-180deg);
+	
+}
+.flip3D:hover > .back{
+	transform: perspective(800px) rotateY(0deg);
+}
